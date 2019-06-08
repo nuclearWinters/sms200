@@ -39,7 +39,7 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
-		D7C8FB144D2641838719AF89 /* libSendSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 339562E227774268A1B446FD /* libSendSMS.a */; };
+		612754024BC24799892187BE /* libSendSMS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11990291881C4EF18F29432C /* libSendSMS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,8 +347,8 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		99BE844FAAFF4FAA8D74EA55 /* SendSMS.xcodeproj */ = {isa = PBXFileReference; name = "SendSMS.xcodeproj"; path = "../node_modules/react-native-sms/SendSMS.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		339562E227774268A1B446FD /* libSendSMS.a */ = {isa = PBXFileReference; name = "libSendSMS.a"; path = "libSendSMS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		AD3FD94C1EF145AB909BB812 /* SendSMS.xcodeproj */ = {isa = PBXFileReference; name = "SendSMS.xcodeproj"; path = "../node_modules/react-native-sms/SendSMS.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		11990291881C4EF18F29432C /* libSendSMS.a */ = {isa = PBXFileReference; name = "libSendSMS.a"; path = "libSendSMS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,7 +377,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				D7C8FB144D2641838719AF89 /* libSendSMS.a in Frameworks */,
+				612754024BC24799892187BE /* libSendSMS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +567,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				99BE844FAAFF4FAA8D74EA55 /* SendSMS.xcodeproj */,
+				AD3FD94C1EF145AB909BB812 /* SendSMS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";

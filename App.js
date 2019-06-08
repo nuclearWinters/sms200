@@ -1,29 +1,60 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  PermissionsAndroid,
+} from 'react-native';
+import SendSMS1 from 'react-native-sms'
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+export default class App extends Component {
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+  someFunction = () => {
+	SendSMS1.send({
+		body: 'The default body of the SMS!',
+		recipients: ['0123456789', '9876543210'],
+		successTypes: ['sent', 'queued'],
+		allowAndroidSendWithoutReadPermission: true
+	}, (completed, cancelled, error) => {
+		console.log('SMS Callback: completed: ' + completed + ' cancelled: ' + cancelled + 'error: ' + error);
+	});
+}
 
-type Props = {};
-export default class App extends Component<Props> {
+  requestCameraPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.SEND_SMS,
+        {
+          title: 'Cool Photo App Camera Permission',
+          message:
+            'Cool Photo App needs access to your camera ' +
+            'so you can take awesome pictures.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
+      } else {
+        console.log('Camera permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
+  componentDidMount () {
+    this.requestCameraPermission()
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View style={styles.container}>        
+        <TouchableOpacity style={styles.button} onPress={this.someFunction.bind(this)}>
+          <Text>Send SMS</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -35,15 +66,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
+  },  
+  button: {
+    padding: 10,
+    borderWidth: .5,
+    borderColor: '#bbb',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
